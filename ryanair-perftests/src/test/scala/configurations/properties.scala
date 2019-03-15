@@ -4,6 +4,7 @@ import io.gatling.core.Predef._
 import io.gatling.http.Predef._
 
 object config {
+  
   val application_url = "http://127.0.0.1:8900"
   
   val httpProtocol = http

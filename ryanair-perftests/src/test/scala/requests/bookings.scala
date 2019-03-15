@@ -32,7 +32,7 @@ object bookings {
 			.header("Content-Type", "application/json")
 			.check(status.is(201)))
 			
-	val getBookingsForCurrentDate = 
+	val getBookingsForDate = 
 	    exec{session => session.set("currentDate",currentDate)}
 	    .exec(http("GET_All_Bookings_For_A_Date")  
 			.get(application_url + "/booking")

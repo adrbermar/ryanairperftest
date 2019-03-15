@@ -14,8 +14,8 @@
 
     <gatling.version>3.0.3</gatling.version>
 
-    <scala-maven-plugin.version>3.3.1</scala-maven-plugin.version>
-    <gatling-maven-plugin.version>3.0.1</gatling-maven-plugin.version>
+    <scala-maven-plugin.version>4.0.1</scala-maven-plugin.version>
+    <gatling-maven-plugin.version>3.0.2</gatling-maven-plugin.version>
   </properties>
 
   <dependencyManagement>
@@ -71,62 +71,15 @@
           <artifactId>scala-maven-plugin</artifactId>
           <version>${scala-maven-plugin.version}</version>
         </plugin>
-        <!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
-        <plugin>
-        	<groupId>org.eclipse.m2e</groupId>
-        	<artifactId>lifecycle-mapping</artifactId>
-        	<version>1.0.0</version>
-        	<configuration>
-        		<lifecycleMappingMetadata>
-        			<pluginExecutions>
-        				<pluginExecution>
-        					<pluginExecutionFilter>
-        						<groupId>net.alchim31.maven</groupId>
-        						<artifactId>
-        							scala-maven-plugin
-        						</artifactId>
-        						<versionRange>[3.3.1,)</versionRange>
-        						<goals>
-        							<goal>testCompile</goal>
-        						</goals>
-        					</pluginExecutionFilter>
-        					<action>
-        						<execute></execute>
-        					</action>
-        				</pluginExecution>
-        			</pluginExecutions>
-        		</lifecycleMappingMetadata>
-        	</configuration>
-        </plugin>
       </plugins>
     </pluginManagement>
     <plugins>
+      
       <plugin>
-        <groupId>net.alchim31.maven</groupId>
-        <artifactId>scala-maven-plugin</artifactId>
-        <executions>
-          <execution>
-            <goals>
-              <goal>testCompile</goal>
-            </goals>
-            <configuration>
-              <args>
-                <arg>-target:jvm-1.8</arg>
-                <arg>-deprecation</arg>
-                <arg>-feature</arg>
-                <arg>-unchecked</arg>
-                <arg>-language:implicitConversions</arg>
-                <arg>-language:postfixOps</arg>
-              </args>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <groupId>io.gatling</groupId>
-        <artifactId>gatling-maven-plugin</artifactId>
-        <version>${gatling-maven-plugin.version}</version>
-      </plugin>
+            <groupId>io.gatling</groupId>
+            <artifactId>gatling-maven-plugin</artifactId>
+            <version>${gatling-maven-plugin.version}</version>
+        </plugin>
     </plugins>
   </build>
 </project>

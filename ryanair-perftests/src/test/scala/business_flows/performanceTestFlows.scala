@@ -14,12 +14,12 @@ object performanceTestFlows {
     .pause(2)
     .exec(bookings.createBookingForPastDate)
     .pause(2)
-    .exec(bookings.getBookingsForCurrentDate)
+    .exec(bookings.getBookingsForDate)
     .pause(2)
     .exec(users.getAllUsers)
     .pause(2)
     .exec(bookings.getBookingsForUser)
-    .pause(2)
+    
     .pace(5 seconds)
   
 }

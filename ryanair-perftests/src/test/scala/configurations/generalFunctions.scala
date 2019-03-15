@@ -13,13 +13,6 @@ object generalFunctions {
     sdf.format(date)
   }
 
-  def yesterday(): String = {
-    val calender = Calendar.getInstance()
-    calender.roll(Calendar.DAY_OF_YEAR, -1)
-    val sdf = new SimpleDateFormat(dateFmt)
-    sdf.format(calender.getTime())
-  }
-
   def daysAgo(days: Int): String = {
     val calender = Calendar.getInstance()
     calender.roll(Calendar.DAY_OF_YEAR, -days)

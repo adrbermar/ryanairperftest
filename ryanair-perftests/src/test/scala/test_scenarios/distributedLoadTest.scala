@@ -13,9 +13,13 @@ class distributedLoadTest extends Simulation {
   val distributedLoadTestScenario = 
      performanceTestFlows.performanceTestFlow.inject(
        constantUsersPerSec(1) during (1 minutes)).throttle(
+       reachRps(1) in (1 second),
+       holdFor(1 minute),
        jumpToRps(3),
-       holdFor(1 minutes),    
-       jumpToRps(1))
+       holdFor(1 minute),
+       jumpToRps(1),
+       holdFor(1 minute))
+       
        
   setUp(distributedLoadTestScenario).protocols(httpProtocol)
   
